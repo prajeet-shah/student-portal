@@ -16,14 +16,23 @@ public class StudentListServlet extends HttpServlet {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
 
-        // HEADER
-        out.println("<h1>Student Portal</h1>");
-        out.println("<a href='index.html'>Home</a> | ");
-        out.println("<a href='add-student'>Add Student</a> | ");
-        out.println("<a href='students'>Student List</a><hr/>");
+        out.println("<html><head>");
+        out.println("<title>Student List</title>");
+        out.println("<link rel='stylesheet' href='css/style.css'>");
+        out.println("</head><body>");
 
+        out.println("<header>");
+        out.println("<h1>Student Portal</h1>");
+        out.println("<nav>");
+        out.println("<a href='index.html'>Home</a>");
+        out.println("<a href='students'>Student List</a>");
+        out.println("<a href='add-student'>Add Student</a>");
+        out.println("</nav></header>");
+
+        out.println("<div class='container'>");
         out.println("<h2>Student List</h2>");
-        out.println("<table border='1'>");
+
+        out.println("<table>");
         out.println("<tr><th>ID</th><th>Name</th><th>Email</th><th>Course</th></tr>");
 
         for (Student s : StudentService.getAllStudents()) {
@@ -36,5 +45,8 @@ public class StudentListServlet extends HttpServlet {
         }
 
         out.println("</table>");
+        out.println("</div>");
+
+        out.println("</body></html>");
     }
 }

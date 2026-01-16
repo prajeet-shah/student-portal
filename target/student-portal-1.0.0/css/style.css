@@ -1,23 +1,155 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    background: #f4f7fb;
+    color: #333;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(90deg, #4e54c8, #8f94fb);
+    padding: 20px 40px;
+}
+
+header h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 28px;
+}
+
+nav {
+    margin-top: 10px;
 }
 
 nav a {
-    margin-right: 10px;
+    color: #fff;
+    margin-right: 20px;
     text-decoration: none;
+    font-weight: 600;
 }
 
-table {
-    border-collapse: collapse;
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* HERO SECTION */
+.hero {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.hero .actions {
+    margin-top: 30px;
+}
+
+.hero .actions a {
+    background: white;
+    color: #5a5fdc;
+    padding: 12px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.hero .actions a:hover {
+    background: #f1f1f1;
+}
+
+/* CONTENT */
+.container {
     width: 80%;
+    margin: 40px auto;
 }
 
-table, th, td {
-    border: 1px solid black;
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-th, td {
-    padding: 8px;
-    text-align: left;
+.card {
+    background: white;
+    flex: 1;
+    min-width: 250px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    color: #4e54c8;
+}
+
+.card p {
+    line-height: 1.5;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background: #f0f3ff;
+}
+
+/* FORM */
+form label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 20px;
+    background: #4e54c8;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #3d42a6;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    margin-top: 40px;
 }

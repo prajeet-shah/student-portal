@@ -15,31 +15,47 @@ public class AddStudentServlet extends HttpServlet {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
 
-        // HEADER
-        out.println("<h1>Student Portal</h1>");
-        out.println("<a href='index.html'>Home</a> | ");
-        out.println("<a href='add-student'>Add Student</a> | ");
-        out.println("<a href='students'>Student List</a><hr/>");
+        out.println("<html><head>");
+        out.println("<title>Add Student</title>");
+        out.println("<link rel='stylesheet' href='css/style.css'>");
+        out.println("</head><body>");
 
+        out.println("<header>");
+        out.println("<h1>Student Portal</h1>");
+        out.println("<nav>");
+        out.println("<a href='index.html'>Home</a>");
+        out.println("<a href='students'>Student List</a>");
+        out.println("<a href='add-student'>Add Student</a>");
+        out.println("</nav></header>");
+
+        out.println("<div class='container'>");
         out.println("<h2>Add Student</h2>");
+
         out.println("<form method='post'>");
-        out.println("Name: <input name='name'/><br/>");
-        out.println("Email: <input name='email'/><br/>");
-        out.println("Course: <input name='course'/><br/>");
-        out.println("<button type='submit'>Add</button>");
+        out.println("<label>Name</label>");
+        out.println("<input name='name' required>");
+
+        out.println("<label>Email</label>");
+        out.println("<input name='email' required>");
+
+        out.println("<label>Course</label>");
+        out.println("<input name='course' required>");
+
+        out.println("<button type='submit'>Add Student</button>");
         out.println("</form>");
+        out.println("</div>");
+
+        out.println("</body></html>");
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        String name = req.getParameter("name");
-        String email = req.getParameter("email");
-        String course = req.getParameter("course");
-
-        if (!name.isEmpty() && !email.isEmpty() && !course.isEmpty()) {
-            StudentService.addStudent(name, email, course);
-        }
+        StudentService.addStudent(
+                req.getParameter("name"),
+                req.getParameter("email"),
+                req.getParameter("course")
+        );
 
         resp.sendRedirect("students");
     }
