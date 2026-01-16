@@ -1,0 +1,5 @@
+com/blackngreen/studentportal/util/DBUtil.class
+com/blackngreen/studentportal/controller/Student.class
+com/blackngreen/studentportal/service/StudentService.class
+com/blackngreen/studentportal/servlet/StudentListServlet.class
+com/blackngreen/studentportal/servlet/AddStudentServlet.class
